@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+      
+      <div id="app">
+            <h1>{{ism}}</h1>
+            <h1 v-text="age"></h1>
+            <h1 v-html="age"></h1>
+            <h1 v-show="markaz">Markaz ochiq kelovir dior bratishkam</h1>
+            <ul>
+                  <li v-if="pul">Ha pulim bor</li>
+                  <li v-else="pul">Yoq pilim tugadi</li>
+            </ul>
+            <ul>
+                  <li v-if="count">EASY</li>
+                  <li v-else-if="count">MEDIUM</li>
+                  <li v-else-if="count">HARD</li>
+                  <li v-else>count is not defined</li>
+            </ul>
+            <ul>
+                  <li :style="{background: car.color}" v-for="(car, i) in cars" :key="i">{{car.name}}</li>
+            </ul>
+
+
+            <div class="img">
+                  <img v-bind:src="link" v-bind:alt="izoh">
+            <!-- <img :class="{'shakl': pul}" :src="link2" :alt="izoh2"> -->
+            </div>
+
+
+            <h1>COUNT: {{num}}</h1>
+            <button v-on:click="plus">plus++</button>
+            <button v-on:click="num--">minus--</button>
+            <button @click="addThree">add to 3</button>
+      </div>
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+      <script src="./app.js"></script>
+</body>
+</html>
